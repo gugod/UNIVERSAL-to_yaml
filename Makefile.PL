@@ -16,7 +16,7 @@ else {
     requires('YAML' => 0.35) unless can_use('YAML::Syck' => 0.45);
 }
 
-auto_install;
+author_tests("xt");
 
 WriteMakefile;
 
