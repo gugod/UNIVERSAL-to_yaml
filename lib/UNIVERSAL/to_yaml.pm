@@ -3,7 +3,8 @@ package UNIVERSAL::to_yaml;
 use warnings;
 use strict;
 use v5.8.0;
-use Best [ qw(YAML::Syck YAML), qw(Dump) ];
+use YAML::Any 'Dump';
+
 our $VERSION = '0.10';
 
 sub UNIVERSAL::to_yaml {
