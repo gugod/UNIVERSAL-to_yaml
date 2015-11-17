@@ -32,9 +32,12 @@ This document describes UNIVERSAL::to_yaml version 0.10
 
 =head1 DESCRIPTION
 
-C<UNIVERSAL::to_yaml> tries to copy Ruby's to_yaml method after people
-require 'yaml' module. It could works on objects, but it works on all
-objects.
+C<UNIVERSAL::to_yaml> provide a C<to_yaml> method for all objects,
+by defining the method at the special C<UNIVERSAL> namespace.
+
+It effectively calls C<YAML::Any::Dump>, meaning that the actual
+backend module is upto the selection order from C<YAML::Any>.
+See also the documentation of L<YAML::Any> for the description.
 
 =head1 INTERFACE
 
@@ -42,17 +45,13 @@ objects.
 
 =item to_yaml()
 
-This does a C<YAML::Dump()> to current object. Since it's put in
-UNIVERSAL namespace, it will work on any module. You just have to use
-UNIVERSAL::to_yaml somewhere in your code.
+This calls C<YAML::Any::Dump()> to convert current object to YAML.
 
 =back
 
 =head1 DEPENDENCIES
 
-You must have C<YAML> or C<YAML::Syck>
-installed. C<UNIVERSAL::to_yaml> prefers later over former if you have
-them both.
+L<YAML>
 
 =head1 BUGS AND LIMITATIONS
 
@@ -67,11 +66,10 @@ Kang-min Liu  C<< <gugod@gugod.org> >>
 
 =head1 LICENCE AND COPYRIGHT
 
-Copyright (c) 2006, Kang-min Liu C<< <gugod@gugod.org> >>. All rights reserved.
+Copyright (c) 2006 - 2015, Kang-min Liu C<< <gugod@gugod.org> >>.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl itself. See L<perlartistic>.
-
 
 =head1 DISCLAIMER OF WARRANTY
 
