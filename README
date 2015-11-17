@@ -2,7 +2,7 @@ NAME
     UNIVERSAL::to_yaml - to_yaml() method for all objects.
 
 VERSION
-    This document describes UNIVERSAL::to_yaml version 0.10
+    This document describes UNIVERSAL::to_yaml version 0.11
 
 SYNOPSIS
         use UNIVERSAL::to_yaml;

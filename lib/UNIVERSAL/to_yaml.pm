@@ -5,7 +5,7 @@ use strict;
 use v5.8.0;
 use YAML::Any 'Dump';
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 sub UNIVERSAL::to_yaml {
     Dump( $_[0] )
@@ -22,7 +22,7 @@ UNIVERSAL::to_yaml - to_yaml() method for all objects.
 
 =head1 VERSION
 
-This document describes UNIVERSAL::to_yaml version 0.10
+This document describes UNIVERSAL::to_yaml version 0.11
 
 =head1 SYNOPSIS
 
